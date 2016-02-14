@@ -1,0 +1,34 @@
+$splash-color: #647;
+$splash-text-color: #fff;
+
+.splash {
+  color: $splash-text-color;
+  background: $splash-color;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.title-splash {
+  // font-family: 'Muli';
+  font-family: 'Dosis';
+  padding-top: 30vh;
+}
+
+.subtitle-splash {
+  font-weight: 100;
+}
+
+.btn-splash {
+  border: 1px solid #fff;
+  color: #fff;
+  background: $splash-color;
+  font-weight: 100;
+  
+  &:hover, &:focus {
+    border: 1px solid #fff;
+    background: lighten($splash-color, 30%);
+    color: #fff;
+    font-color: #fff;
+  }
+}
+
