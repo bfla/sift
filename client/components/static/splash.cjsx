@@ -13,7 +13,9 @@
 
   signinWithGmail: (e) ->
     e.preventDefault()
-    Meteor.loginWithFacebook()
+    Meteor.loginWithGoogle (err, res) ->
+      return sAlert.error(err.message) if err?
+      sAlert.success('Welcome')
 
   render: ->
     return (
@@ -21,7 +23,7 @@
         <div className='splash'>
           <div className='col-md-12'>
             <h1 className='title-splash'>Sift</h1>
-            <p className='lead subtitle-splash'>See emails that are actually important</p>
+            <p className='lead subtitle-splash'>Only read emails that are actually important</p>
             <a 
               href='#' 
               className='btn btn-default-outline btn-splash'
