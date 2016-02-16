@@ -1,21 +1,20 @@
 @Splash = React.createClass
-  # mixins: [ReactMeteorData, SpinnerMixin]
 
-  # propTypes:
-    # foo: React.PropTypes.object.isRequired
-
-  # getMeteorData: ->
-    # subs = [Meteor.subscribe('foo')]
-    # data =
-      # subscriptions: subs
-      # foo: Foo.find()
-    # return data 
+  # TODO:
+  # Configure Google logins -- see accounts UI...
+  # Configure Gmail permissions .readonly vs write
 
   signinWithGmail: (e) ->
     e.preventDefault()
-    Meteor.loginWithGoogle (err, res) ->
-      return sAlert.error(err.message) if err?
-      sAlert.success('Welcome')
+    Meteor.loginWithGoogle(
+      requestOfflineToken: true
+      forceApprovalPrompt: true
+      requestPermissions: ["https://www.googleapis.com/auth/gmail.readonly"] # Hm...
+    , loginCallback)
+
+  loginCallback: (err, res) ->
+    return sAlert.error(err.message) if err?
+    sAlert.warning('Welcome')
 
   render: ->
     return (
