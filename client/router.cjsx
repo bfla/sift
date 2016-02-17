@@ -4,6 +4,6 @@ FlowRouter.route('/',
   action: (params) ->
     ReactLayout.render(
       MainLayout, 
-      content: <Splash />
+      content: <MessageList />
     )
 )
