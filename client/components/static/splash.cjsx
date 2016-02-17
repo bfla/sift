@@ -10,7 +10,7 @@
       requestOfflineToken: true
       forceApprovalPrompt: true
       requestPermissions: ["https://www.googleapis.com/auth/gmail.readonly"] # Hm...
-    , loginCallback)
+    , @loginCallback)
 
   loginCallback: (err, res) ->
     return sAlert.error(err.message) if err?
