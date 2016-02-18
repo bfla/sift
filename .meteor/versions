@@ -99,6 +99,8 @@ sanjo:meteor-files-helpers@1.1.0_7
 sanjo:meteor-version@1.0.0
 service-configuration@1.0.5
 session@1.1.1
+slava:gmail@0.1.0
+slava:gmail-query-parser@1.1.0
 spacebars@1.0.7
 spacebars-compiler@1.0.7
 standard-minifiers@1.0.2

@@ -1,15 +1,12 @@
 @MessageList = React.createClass
-  mixins: [ReactMeteorData, SpinnerMixin]
+  # mixins: [ReactMeteorData, SpinnerMixin]
 
-  # propTypes:
-    # foo: React.PropTypes.object.isRequired
-
-  getMeteorData: ->
-    subs = [Meteor.subscribe('messages')]
-    data =
-      subscriptions: subs
-      messages: Messages.find().fetch()
-    return data 
+  # getMeteorData: ->
+  #   subs = [Meteor.subscribe('messages')]
+  #   data =
+  #     subscriptions: subs
+  #     messages: Messages.find().fetch()
+  #   return data 
 
   render: ->
     return (
